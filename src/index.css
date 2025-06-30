@@ -1,12 +1,19 @@
 @import "tailwindcss";
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  color-scheme: light dark;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.dark-theme {
+  color: #dddddd;
+  color-scheme: dark;
   background-color: #242424;
+  transition:
+    color 1s ease,
+    background-color 1s ease;
 }
 a {
   font-weight: 500;
@@ -43,17 +50,27 @@ body {
 }
 
 @media (prefers-color-scheme: light) {
-  :root {
+  .light-theme {
+    --text-color: #213547;
+    --bg-color: #c9c9c9;
+    --accent-color: #747bff;
+
     color: #213547;
-    background-color: #ffffff;
+    background-color: var(--bg-color);
+    color-scheme: light;
+    
+    transition: 
+      color 0.3s ease, 
+      background-color 1s ease;
+
   }
-  a:hover {
-    color: #747bff;
+  .light-theme a:hover {
+    color: var(--text-color);
   }
-  button {
-    background-color: #f9f9f9;
+  .light-theme button {
+    background-color: var(--bg-color);
   }
-   input[type='number'] {
+  .light-theme input[type='number'] {
     background-color: #50a0a3; /* тёмный cyan */
     color: white;
     border-color: #6a7b7e;
