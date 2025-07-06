@@ -14,7 +14,13 @@ function App() {
       <div className="w-fit m-auto">
         <div className="flex flex-col gap-2">
           <h1>Set timer</h1>
-          <PatternFormat value="000000" className="rounded-md bg-amber-300 text-amber-950 p-3 text-3xl" format="##:##:##" allowEmptyFormatting mask="_" />
+          <PatternFormat 
+            value="000500"
+            className="rounded-md bg-amber-300 text-amber-950 p-3 text-3xl" 
+            format="##:##:##"
+            allowEmptyFormatting
+            mask="_"
+          />
         </div>
         <div className="mt-12">
           <div className="card">
@@ -23,6 +29,9 @@ function App() {
             </button>
           </div>
         </div>
+        <button className="p-3 bg-green">
+          Start
+        </button>
       </div>
     </div>
   )
