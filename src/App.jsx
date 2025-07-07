@@ -23,6 +23,11 @@ function App() {
             </button>
           </div>
         </div>
+        <div className="flex flex-col gap-5">
+          <button className="bg-green-600" onClick={() => setCount()}>Start!</button>
+          <button className="bg-red-600" onClick={() => setCount()}>Stop!</button>
+          <button className="bg-yellow-600" onClick={() => setCount()}>Pause!</button>
+        </div>
       </div>
     </div>
   )

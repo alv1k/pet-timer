@@ -44,6 +44,17 @@ input[type='number']:focus {
   border-color: #0d47a1;
   box-shadow: 0 0 0 2px rgba(30, 136, 229, 0.3);
 }
+button {
+  padding: 12px 16px;
+  border-radius: 28px;
+  color: wheat;
+}
+button:hover {
+  box-shadow: 0 0 0 2px rgba(145, 129, 39, 0.712);
+}
+button:focus {
+  background-color: #242424;
+}
 
 body {
   margin: 0;
