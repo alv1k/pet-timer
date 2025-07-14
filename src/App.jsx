@@ -53,7 +53,7 @@ function App() {
   useEffect(() => {
     hours = parseInt(timeLeft / 60);
     minutes = parseInt(timeLeft / 60) > 59 ? parseInt(timeLeft / 60) : parseInt(timeLeft / 60);
-    seconds = (timeLeft % 60);
+    seconds = (timeLeft % 60);20
     console.log(hours, minutes, seconds, 'hours minutes seconds');    
   }, [timeLeft]);
 
