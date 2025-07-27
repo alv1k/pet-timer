@@ -15,6 +15,7 @@ function App() {
   const hoursRef = useRef(null);
   const minutesRef = useRef(null);
   const secondsRef = useRef(null);
+  const audioRef = useRef(null); // реф на аудио
   
   const [customHours, setCustomHours] = useState('00');
   const [customMinutes, setCustomMinutes] = useState('00');
@@ -32,6 +33,9 @@ function App() {
           if (prevTime <= 1) {
             clearInterval(id);
             setTimerStatus(false);
+            if (audioRef.current) {
+              audioRef.current.play();
+            }
             return 0;
           }
           return prevTime - 1;
@@ -54,7 +58,6 @@ function App() {
     setHours(h);
     setMinutes(m);
     setSeconds(s);
-    console.log(hours, minutes, seconds, 'hours minutes seconds');
   }, [timeLeft]);
 
   const formattedHours = hours.toString().padStart(2, '0');
@@ -92,7 +95,7 @@ function App() {
         <ThemeButton />
       </div>
       
-      <div className="2xl:w-1/7 xl:w-1/6 md:w-2/7 w-5/6 m-auto">
+      <div className="2xl:w-1/7 xl:w-1/5 md:w-2/7 w-5/6 m-auto">
         <div className="text-center">
           <h1 className="pb-5">Set interval</h1>
           <div className="border rounded justify-center flex gap-2 mb-4 py-2">
@@ -156,7 +159,7 @@ function App() {
         </div>
       </div>
       
-      <div className="2xl:w-1/7 xl:w-1/6 md:w-2/7 w-5/6 m-auto mt-0">
+      <div className="2xl:w-1/7 xl:w-1/5 md:w-2/7 w-5/6 m-auto mt-0">
         <div className="flex flex-col gap-2 text-center">
           <h1 className="cursor-default">Timer</h1>
           <PatternFormat 
@@ -194,6 +197,7 @@ function App() {
           )
         }
         </div>
+        <audio ref={audioRef} src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3" preload="auto" />    
       </div>      
     </div>
   )
